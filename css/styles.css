@@ -192,6 +192,9 @@ header.scrolled {
   height: 48px;
   width: auto;
   transition: var(--transition-smooth);
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 4px 10px;
+  border-radius: 4px;
 }
 
 header.scrolled .logo-img {
@@ -812,6 +815,9 @@ footer {
   width: 90%;
   height: auto;
   filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.2));
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 12px 24px;
+  border-radius: 8px;
 }
 
 .hero-orbit-line {
