@@ -162,7 +162,7 @@ header {
   left: 0;
   width: 100%;
   height: var(--header-height);
-  z-index: 1000;
+  z-index: 1100;
   transition: var(--transition-smooth);
   border-bottom: 1px solid transparent;
 }
@@ -1908,9 +1908,13 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   :root {
     --header-height: 70px;
+  }
+  
+  body.menu-open {
+    overflow: hidden;
   }
   
   .section {
@@ -1941,10 +1945,14 @@ footer {
     gap: 2rem;
     transition: var(--transition-smooth);
     z-index: 1050;
+    pointer-events: none;
+    visibility: hidden;
   }
   
   .nav-menu.open {
     right: 0;
+    pointer-events: auto;
+    visibility: visible;
   }
   
   .nav-link {
