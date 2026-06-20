@@ -26,27 +26,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const navMenu = document.querySelector('.nav-menu');
 
   if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
-      navMenu.classList.toggle('open');
-      document.body.classList.toggle('menu-open');
+    hamburger.setAttribute('aria-expanded', 'false');
+
+    const toggleMenu = (open) => {
+      const isExpanded = open !== undefined ? open : !navMenu.classList.contains('open');
+      hamburger.classList.toggle('open', isExpanded);
+      navMenu.classList.toggle('open', isExpanded);
+      document.body.classList.toggle('menu-open', isExpanded);
+      hamburger.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+    };
+
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMenu();
     });
 
     // Close mobile menu when a link is clicked
     document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
       link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        navMenu.classList.remove('open');
-        document.body.classList.remove('menu-open');
+        toggleMenu(false);
       });
     });
 
     // Close mobile menu when clicking outside
     document.addEventListener('click', (e) => {
       if (navMenu.classList.contains('open') && !navMenu.contains(e.target) && !hamburger.contains(e.target)) {
-        hamburger.classList.remove('open');
-        navMenu.classList.remove('open');
-        document.body.classList.remove('menu-open');
+        toggleMenu(false);
       }
     });
   }

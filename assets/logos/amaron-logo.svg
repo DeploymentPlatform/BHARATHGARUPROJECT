@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 60" width="100%" height="100%">
+  <rect width="160" height="60" fill="none"/>
+  <g transform="translate(10, 10)">
+    <rect x="0" y="5" width="140" height="30" rx="3" fill="#111111"/>
+    <text x="70" y="27" font-family="'Montserrat', 'Inter', sans-serif" font-weight="900" font-size="18" fill="#76b900" letter-spacing="3" text-anchor="middle">AMARON</text>
+  </g>
+</svg>

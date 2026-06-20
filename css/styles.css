@@ -1057,6 +1057,30 @@ footer {
   background-color: rgba(0, 229, 255, 0.05);
 }
 
+.brand-logo-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  transition: var(--transition-smooth);
+}
+
+.brand-logo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 229, 255, 0.15);
+  border-color: var(--accent-color);
+}
+
+.brand-logo-card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
 .brand-disclaimer {
   font-size: 0.8rem;
   color: var(--text-muted);
@@ -1923,6 +1947,23 @@ footer {
   
   .section-title {
     font-size: 2rem;
+  }
+  
+  .logo-img {
+    height: 38px;
+  }
+  
+  .logo-text {
+    font-size: 1.1rem;
+  }
+  
+  .logo-text span {
+    font-size: 0.65rem;
+  }
+  
+  .brands-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
   }
   
   /* Navigation mobile menu styles */
